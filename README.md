@@ -1,43 +1,84 @@
-# Frontend for match-it android application
+# Match-it Android
 
-Contains Android studio project for match-it frontend.
-Application can be build using provided gradle files (e.g. in Android studio or gradlew command).
+Android client for the **Match-it** application — a group 
+activity consensus app that helps friends agree on movies 
+or nearby restaurants using a swipe-based voting session.
 
-## Important notes for testing
-Since current infrastructure for server side communication relies on 
-FCM ([firebase cloud messaging](https://firebase.google.com/products/cloud-messaging)),
-including e.g. session invites, it is required that users are in android loggend into the their google account.
+> The backend is available at [match-it-backend](https://github.com/Cross-bit/match-it-demo-backend).
 
-Currently only movies matching is supported.
+---
 
-Links:
+## Overview
 
-[showcase](https://drive.google.com/file/d/13WdtzGqauqGs-amZH_CfoRhOnkDSGJc6/view?usp=drive_link)
+The app allows users to create or join a 
+shared voting session, swipe through activity 
+recommendations, and reach a group consensus. 
+Currently **movie matching** is supported.
 
-[Repository](https://drive.google.com/file/d/13WdtzGqauqGs-amZH_CfoRhOnkDSGJc6/view?usp=drive_link) 
-containing all related topics.
+A short showcase of the application is available [here](https://drive.google.com/file/d/13WdtzGqauqGs-amZH_CfoRhOnkDSGJc6/view?usp=drive_link).
 
-## Build and run
-For simplicity it is recommended to build and run project using IDE, e.g. android studio.
+---
 
+## Requirements
 
-Before running the app, there needs to be local.properties file created, correctly set build variables.
+- Android **9.0 (API 28)** or higher
+- Google account signed in on the device — required 
+for FCM push notifications (session invites and match 
+updates rely on Firebase Cloud Messaging)
 
-TODO: add link to these variables. For now (to this point 17.6. 2024) it should be enough to set:
+---
 
+## Build and Run
+
+The recommended way to build and run the project 
+is via **Android Studio** using the provided Gradle 
+files. Alternatively, use the Gradle wrapper from 
+the command line:
+
+```sh
+./gradlew assembleDebug
 ```
-# Local API dev settings
 
-DEV_SERVER_IP=192.168.0.4
+### Build Flavors
 
-ACCOUNTS_API_URL=http://192.168.0.4:7050/api/v1/
+The project defines four build flavors — select the appropriate one before building:
 
-FRIENDSHIPS_API_URL=http://192.168.0.4:9050/api/v1/
+| Flavor | Description |
+|---|---|
+| `devEmu` | Development build targeting Android emulator (`10.0.2.2`) |
+| `devDevice` | Development build targeting a physical device (uses `DEV_SERVER_IP` from `local.properties`) |
 
-DATA_API_URL=http://192.168.0.4:8050/api/v1/
+In Android Studio, select the flavor via **Build Variants** panel.
+
+### Local Configuration
+
+Before running the app, create a `local.properties` file in the project root:
+
+```properties
+# Required for devDevice flavor — set to your machine's local IP
+DEV_SERVER_IP=192.168.x.x
+
+# Required for Google Maps (restaurant location display)
+GOOGLE_MAPS_API_KEY=your-maps-api-key
 ```
 
+> For `devEmu` flavor, `DEV_SERVER_IP` is not needed — the emulator uses `10.0.2.2` automatically.
 
+---
 
+## Notes
 
+- Users must be signed into a Google account on the device for push notifications (FCM) to work. This is required for session invitations and real-time match updates.
+- Only **movie matching** is currently supported. Restaurant matching is planned.
 
+---
+
+> This repository contains a research prototype developed as part of a bachelor's thesis.
+
+## License
+
+Copyright (c) 2026 Ondřej Kříž
+
+This software is a research prototype licensed for **non-commercial research and educational use only**. Commercial use is prohibited without explicit written permission.
+
+See [LICENSE](./LICENSE) for full terms. For commercial licensing inquiries contact: ondra.kryz@seznam.cz
