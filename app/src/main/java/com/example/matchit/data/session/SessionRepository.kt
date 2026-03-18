@@ -91,8 +91,7 @@ class SessionRepository @Inject constructor(
     public fun setIsInSession(value: Boolean) {
         _isInSession.value = value
     }
-
-    // rly idk if this is good practice in any way...
+ 
     val lastMatchedMovieCard: Flow<MovieCardData?>
         get() = _lastMatchedMovieCard
 
