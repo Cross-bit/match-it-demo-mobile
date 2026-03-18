@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/exit_session_option"
+        android:title="@string/exit_option_title"
+        android:icon="@drawable/ic_activity_selection"
+        />
+
+    <item
+        android:id="@+id/rewind_card_option"
+        android:icon="@drawable/ic_rewind"
+        android:title="@string/rewind_option_title"
+        android:contentDescription="@string/rewind_option_title"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/session_parameters"
+        android:icon="@drawable/ic_options"
+        android:title="@string/rewind_option_title"
+        android:contentDescription="@string/rewind_option_title"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/chat_option"
+        android:icon="@drawable/ic_chat"
+        android:title="@string/chat_option_title"
+        android:contentDescription="@string/chat_option_title"
+        app:showAsAction="always"
+        />
+
+
+</menu>

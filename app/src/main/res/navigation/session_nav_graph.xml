@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/session_nav_graph.xml"
+    app:startDestination="@id/sessionInviteFragment">
+    <fragment
+        android:id="@+id/sessionInviteFragment"
+        android:name="com.example.matchit.ui.matchingSession.creation.invitation.SessionInviteFragment"
+        android:label="fragment_session_invite"
+        tools:layout="@layout/fragment_session_invite" >
+        <action
+            android:id="@+id/action_sessionInviteFragment_to_sessionInviteConfirmFragment"
+            app:destination="@id/sessionInviteConfirmFragment" />
+        <action
+            android:id="@+id/action_sessionInviteFragment_to_sessionCardsFragment"
+            app:destination="@id/sessionMatchingFragment" />
+        <action
+            android:id="@+id/action_sessionInviteFragment_to_initVotingAlert"
+            app:destination="@id/initVotingAlert" />
+    </fragment>
+    <fragment
+        android:id="@+id/sessionInviteConfirmFragment"
+        android:name="com.example.matchit.ui.matchingSession.creation.confirmation.SessionInviteConfirmFragment"
+        android:label="fragment_session_invite_confirm"
+        tools:layout="@layout/fragment_session_invite_confirm" >
+        <action
+            android:id="@+id/action_sessionInviteConfirmFragment_to_sessionMatchingFragment"
+            app:destination="@id/sessionMatchingFragment" />
+        <action
+            android:id="@+id/action_sessionInviteConfirmFragment_to_initVotingAlert"
+            app:destination="@id/initVotingAlert" />
+    </fragment>
+    <fragment
+        android:id="@+id/sessionMatchingFragment"
+        android:name="com.example.matchit.ui.matchingSession.matching.SessionMatchingFragment"
+        android:label="fragment_session_matching"
+        tools:layout="@layout/fragment_session_matching">
+        <action
+            android:id="@+id/action_sessionCardsFragment_to_cardMatchedFragment"
+            app:destination="@id/cardMatchedFragment" />
+        <action
+            android:id="@+id/action_sessionMatchingFragment_to_chatWindowFragment"
+            app:destination="@id/chatWindowFragment" />
+        <action
+            android:id="@+id/action_sessionMatchingFragment_to_restaurantCardMatchedFragment"
+            app:destination="@id/restaurantCardMatchedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardMatchedFragment"
+        android:name="com.example.matchit.ui.matchingSession.matching.matchedCards.MovieCardMatchedFragment"
+        android:label="fragment_card_matched"
+        tools:layout="@layout/fragment_card_matched_movie" >
+        <action
+            android:id="@+id/action_cardMatchedFragment_to_sessionInviteFragment"
+            app:destination="@id/sessionInviteFragment" />
+        <action
+            android:id="@+id/action_cardMatchedFragment_to_sessionInviteConfirmFragment"
+            app:destination="@id/sessionInviteConfirmFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/initVotingAlert"
+        android:name="com.example.matchit.ui.matchingSession.initialisation.InitVotingAlertFragment"
+        android:label="InitVotingAlert" >
+        <action
+            android:id="@+id/action_initVotingAlert_to_sessionInviteFragment"
+            app:destination="@id/sessionInviteFragment" />
+        <action
+            android:id="@+id/action_initVotingAlert_to_initVotingMoviesFragment"
+            app:destination="@id/initVotingMoviesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/initVotingMoviesFragment"
+        android:name="com.example.matchit.ui.matchingSession.initialisation.movies.InitVotingMoviesFragment"
+        android:label="InitVotingMoviesFragment" >
+        <action
+            android:id="@+id/action_initVotingMoviesFragment_to_initVotingCompletedFragment"
+            app:destination="@id/initVotingCompletedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/initVotingCompletedFragment"
+        android:name="com.example.matchit.ui.matchingSession.initialisation.InitVotingCompletedFragment"
+        android:label="fragment_init_voting_completed"
+        tools:layout="@layout/fragment_init_voting_completed" >
+        <action
+            android:id="@+id/action_initVotingCompletedFragment_to_sessionInviteConfirmFragment"
+            app:destination="@id/sessionInviteConfirmFragment" />
+        <action
+            android:id="@+id/action_initVotingCompletedFragment_to_sessionInviteFragment"
+            app:destination="@id/sessionInviteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatWindowFragment"
+        android:name="com.example.matchit.ui.chatting.ChatWindowFragment"
+        android:label="ChatWindowFragment" >
+
+        <argument
+            android:name="sessionUUID"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_chatWindowFragment_to_sessionMatchingFragment"
+            app:destination="@id/sessionMatchingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/restaurantCardMatchedFragment"
+        android:name="com.example.matchit.ui.matchingSession.matching.matchedCards.RestaurantCardMatchedFragment"
+        android:label="fragment_card_matched_restaurant"
+        tools:layout="@layout/fragment_card_matched_restaurant" />
+</navigation>

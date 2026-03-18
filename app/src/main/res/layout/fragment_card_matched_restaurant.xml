@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.matchingSession.matching.matchedCards.MovieCardMatchedFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/matched_view_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="15dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/app_base_color"
+                android:text="@string/matched_fragment_title"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:padding="8dp"
+                android:textSize="48sp" />
+        </androidx.cardview.widget.CardView>
+
+        <com.example.matchit.ui.matchingSession.matching.matchedCards.MatchedSummaryView
+            android:id="@+id/matchedSummaryView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@id/matched_view_title"
+            app:layout_constraintBottom_toTopOf="@id/close_btn"
+            app:layout_constraintVertical_bias="0" >
+        </com.example.matchit.ui.matchingSession.matching.matchedCards.MatchedSummaryView>
+
+        <TextView
+            android:id="@+id/other_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/start_navigation_text_btn"
+            android:textColor="@color/app_base_color"
+            android:gravity="center"
+            android:padding="4dp"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toTopOf="@id/close_btn"
+            android:visibility="gone"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/close_btn"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_margin="12dp"
+            android:backgroundTint="@color/btn_like_primary"
+            android:text="@string/continue_btn"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/card_detail_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:elevation="25dp" />
+
+    <nl.dionsegijn.konfetti.xml.KonfettiView
+        android:id="@+id/konfettiView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</FrameLayout>

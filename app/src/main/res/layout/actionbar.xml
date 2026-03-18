@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/app_base_color"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        >
+        <!--<ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/back_icon"
+            android:layout_centerVertical="true"
+            android:src="@drawable/actionbar_arrow_back"
+
+
+        >  </ImageView>-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:text="Match it"
+            > </TextView>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/more_btn"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_vertical_dots"
+
+
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            >  </ImageView>
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

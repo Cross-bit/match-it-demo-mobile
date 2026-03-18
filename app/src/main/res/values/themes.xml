@@ -1,0 +1,72 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Matchit" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+
+        <item name="colorPrimary">@color/purple500</item>
+        <item name="colorPrimaryVariant">@color/purple700</item>
+
+        <!-- <item name="colorBackground">#FFFFFF</item> -->
+        <item name="colorSurface">#FFFFFF</item>
+        <item name="colorError">#B00020</item>
+
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnBackground">@color/black</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorOnError">#B00020</item>
+
+        <item name="materialButtonStyle">@style/primaryButton</item>
+
+    </style>
+
+    <style name="primaryButton" parent="Widget.MaterialComponents.Button">
+        <!--<item name="backgroundTint">@color/</item>-->
+    </style>
+
+    <style name="customToolBar" parent="Widget.AppCompat.Toolbar">
+        <!--<item name="backgroundTint">@color/</item>-->
+
+    </style>
+    
+    <style name="Theme.Matchit" parent="Base.Theme.Matchit" />
+
+    <!--<style name="primaryButton" parent="Base.Theme.Matchit" />-->
+
+    <style name="myButton">
+       <!-- <item name=""-->
+    </style>
+
+    <style name="Circular">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="RoundedSquare">
+        <item name="cornerSize">10%</item>
+    </style>
+
+    <style name="CornerCut">
+        <item name="cornerSize">15dp</item>
+        <item name="cornerFamily">cut</item>
+    </style>
+
+    <style name="DiamondCut">
+        <item name="cornerSize">75dp</item>
+        <item name="cornerFamily">cut</item>
+    </style>
+
+    <style name="SpecificCornerCut">
+        <item name="cornerSizeTopRight">75dp</item>
+        <item name="cornerFamilyTopRight">cut</item>
+        <item name="cornerSizeBottomLeft">75dp</item>
+        <item name="cornerFamilyBottomLeft">cut</item>
+    </style>
+
+    <style name="SpecificCornerRounded">
+        <item name="cornerSizeTopRight">75dp</item>
+        <item name="cornerFamilyTopRight">rounded</item>
+        <item name="cornerSizeBottomLeft">75dp</item>
+        <item name="cornerFamilyBottomLeft">rounded</item>
+    </style>
+
+</resources>

@@ -1,0 +1,353 @@
+<resources>
+
+    <!-- Application general -->
+    <string name="app_name">Match-it</string>
+    <string name="application_name_title">Match IT</string>
+    <string name="registration_screen_title">Registration</string>
+    <string name="title_activity_matching"> Matching activity </string>
+    <string name="welcome">"Welcome back %1$s!"</string>
+    <string name="go_back_text">Go back</string>
+
+    <!-- Bottom Navigation -->
+    <string name="bottom_nav_activities_title">Activities</string>
+    <string name="bottom_nav_connections_title">Connections</string>
+
+    <!-- Forms related general -->
+    <string name="prompt_username">Username</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="invalid_password_length">Password must be >5 characters</string>
+    <string name="invalid_username_length">Username must be >=3 characters</string>
+    <string name="invalid_email_general">Invalid email address</string>
+    <string name="user_already_exists">User with this email already exists</string>
+    <string name="password_too_weak">Password is to weak</string>
+    <string name="signup_failed_already_exist">"Sign up failed, already exist!"</string>
+
+    <!-- Login -->
+    <string name="action_log_in_short">Login</string>
+    <string name="login_failed_general">"Login failed"</string>
+    <string name="login_failed_already_logged_in">User is already logged in on another device</string>
+    <string name="login_failed_invalid_password">Invalid password</string>
+    <string name="login_failed_not_verified">Account is not verified. Check your email for the verification link first.</string>
+    <string name="login_failed_not_exist">User does not exist.</string>
+
+    <string name="signup_failed">"Sign up failed"</string>
+    <string name="signup_successful">"Account created!"</string>
+    <string name="signup_verification_mail_send">"Verification mail send"</string>
+
+    <!-- Sign up -->
+    <string name="action_sign_up">Sign up!</string>
+    <string name="action_sign_in_short">Sign in</string>
+
+    <string name="error_required">This field is required.</string>
+    <string name="error_invalid_format">Invalid format.</string>
+    <string name="error_too_short">Value is too short.</string>
+    <string name="error_too_long">Value is too long.</string>
+    <string name="error_out_of_range">Value is out of allowed range.</string>
+
+    <string name="error_invalid_email">Invalid email address.</string>
+    <string name="error_invalid_uuid">Invalid identifier.</string>
+    <string name="error_not_an_array">Invalid list format.</string>
+    <string name="error_array_too_small">Not enough items.</string>
+    <string name="error_array_too_large">Too many items.</string>
+    <string name="error_invalid_enum">Invalid value selected.</string>
+
+    <string name="error_weak_password">Password is too weak.</string>
+
+    <string name="error_invalid_file">Invalid file.</string>
+    <string name="error_file_required">File is required.</string>
+    <string name="error_file_too_large">File is too large.</string>
+    <string name="error_unexpected_file">Unexpected file field.</string>
+    <string name="error_file_type_not_allowed">File type is not allowed.</string>
+    <string name="error_image_type_not_allowed">Image type is not allowed.</string>
+
+    <!-- Session related definitions -->
+    <string name="session_connection_failed">Session connection failed</string>
+    <string name="invited_user_connected_to_session">connected to session!</string> <!-- TODO: this should include placeholder... -->
+    <string name="close_session_message_alert">Another press exits the session…</string>
+    <string name="session_invite_confirm_double_press">Another press rejects the invit</string>
+    <string name="no_members_to_invite">No members to invite</string>
+    <string name="no_connections_yet">No connections</string>
+
+    <string name="connected_to_session">Connected to session!</string>
+    <string name="session_started">Session started</string>
+
+    <string name="user_session_connection_failed">User session connection failed</string>
+    <string name="invite_selected_members">Invite</string>
+    <string name="cancel_members_invitation_btn">Cancel</string>
+    <string name="start_matching_btn_text">Start!</string>
+    <string name="session_creation_failed">Session creation failed!</string>
+    <string name="no_users_connected">All users rejected invitation, terminating...</string>
+    <string name="session_init_failed">Fail during initialisation</string>
+    <string name="session_invitation_failed">Session invitation failed</string>
+    <string name="session_duration_timeout_reached">Session duration timeout reached</string>
+    <string name="session_invitation_closed">Session invitation closed</string>
+    <string name="session_creation_timeout_reached">Session invitation expired</string>
+
+    <string name="invitation_message">%1$s\n invited you to:</string>
+    <string name="waiting_to_start_session">Waiting for session to start,\n hold on!</string>s
+    <string name="inviting_members_message">Inviting selected members, waiting for the response...</string>
+    <string name="exit_session_invite_btn_text">Exit session invitation</string>
+
+    <string name="session_initialisation_error">Session initialisation error</string>
+
+    <string name="creator_terminated_session">Creator terminated session</string>
+
+    <string name="session_invitation_rejected">Rejected</string>
+
+    <string name="invitation_tab_ses_options">Options</string>
+    <string name="invitation_tab_mem">Members</string>
+
+    <string name="create_new_session_panel_title">Create new session</string>
+
+    <string name="session_invite_invalid">This session is no longer available</string>
+
+    <!-- Notification related definitions -->
+
+    <string name="session_invite_title">Ready to match?!</string>
+    <string name="session_settings_title">Create new session</string>
+    <string name="session_invite_view_title">Select friends:</string>
+    <string name="session_invite_notification_message">You have new invitation to matching session from %1$s! Accept?</string>
+
+
+    <!-- initial voting related -->
+    <string name="initiate_completed_title">Congrats!</string>
+    <string name="initiate_completed_message">Now you are ready to match!</string>
+    <string name="initiate_alert_title">You have to perform initialisation first</string>
+    <string name="initiate_alert_explanation">
+        Hi, sorry we disturb you,\nbut we need you to go through initialisation for this category first so we can offer you the best experience possible\n+ it will take just a few seconds\n(we promise🙏).
+    </string>
+
+    <string name="alert_message_init_rejection">Are you sure you want to continue? This will reject the invitation to the session...</string>
+
+
+    <string name="login_text">Log in</string>
+    <string name="back_to_login_text">Back to log in</string>
+
+    <!-- Matching card -->
+    <string name="movie_card_title_year">%1$s (%2$s)</string>
+    <string name="movie_year_title">Year</string>
+    <string name="movie_description_title">Description</string>
+    <string name="movie_cast_title">Cast</string>
+    <string name="movie_available_from">Available from</string>
+
+    <!-- Session top menu -->
+    <string name="rewind_option_title">Rewind</string>
+    <string name="chat_option_title">Open chat</string>
+    <string name="exit_option_title">Exit session</string>
+    <string name="cards_remaining_title">Remaining cards %1$i/%2$i</string>
+    <string name="user_exit_session_alert_message">Are you sure you want to quit current session?</string>
+
+    <!-- Matching result -->
+    <string name="matching_result_success">Successfully matched!</string>
+    <string name="matching_result_error">Matching result verification failed</string>
+    <string name="general_matching_error">Error occurred during matching</string>
+    <string name="matched_session_error">Error occurred on match</string>
+    <string name="matched_fragment_title">It\'s a match!!</string>
+    <string name="close_btn">Close</string>
+    <string name="continue_btn">Continue</string>
+    <string name="back_btn">Back</string>
+    <string name="waiting_for_other_members_message">Waiting for other members to finish deck...</string>
+    <string name="other_possible_cards_title">Other top picks</string>
+    <string name="start_navigation_text_btn">Start navigation</string>
+
+    <!-- Dashboard and session selection -->
+    <string name="movie_activity_title">Movie</string>
+    <string name="restaurant_activity_title">Restaurant</string>
+    <string name="board_game_activity_title">Board game</string>
+    <string name="trip_activity_title">Trip idea</string>
+    <string name="vacation_destination_activity_title">Vacation destination</string>
+    <string name="team_sport_activity_title">Team sport</string>
+    <string name="movie_card_title">Don\'t know what to watch?\nLet\'s find out!</string>
+    <string name="restaurant_card_title">Wanna eat out? Let\'s pick the best spot!</string>
+    <string name="meal_card_title">Meal</string>
+    <string name="event_card_title">Event</string>
+    <string name="dashboard_welcome_title">Welcome back,\n %1$s</string>
+    <string name="dashboard_welcome_subtitle">Ready to match?!</string>
+    <string name="exit_app_on_double_backpress_msg">Press again to exit app…"</string>
+
+    <string name="default_username">user</string>
+
+    <string name="connections_panel_title">Connections</string>
+    <string name="pending_connections_panel_title">Pending connections</string>
+    <string name="session_history_panel_title">Previous sessions</string>
+
+
+
+    <!-- social connections/friends -->
+
+    <string name="connections_list_title">All connections</string>
+    <string name="add_friend_icon_description">Add friend</string>
+    <string name="find_person_icon_description">Search friend</string>
+
+    <string name="person_not_found_message">User not found</string>
+    <string name="failed_to_send_request">Failed to send friend request</string>
+    <string name="successfully_send_request">Successfully send friend request</string>
+    <string name="enter_user_email_search_person">Enter user email</string>
+
+    <string name="friend_requests_list_title">Pending requests</string>
+    <string name="search_person_list_title">Find user</string>
+    <string name="no_pending_requests_text">No requests found</string>
+    <string name="friend_request">Send invite</string>
+    <string name="find_user_by_email">Search</string>
+    <string name="accept_request">Admit</string>
+    <string name="request_rejected">Rejected</string>
+
+    <string name="friend_request_title">New request!</string>
+    <string name="friend_request_message">%1$s\n sent you friend request.</string>
+
+    <!-- User Preferences -->
+    <string name="remove_account_btn_text">Delete account</string>
+    <string name="user_account_delete_alert_message">Are you sure you want to delete your account? This action cannot be undone.</string>
+    <string name="account_delete_error">Sorry, but there was an error, please try it later...</string>
+    <string name="account_delete_error_normal">Account couldn\'t be deleted, try it later</string>
+    <string name="user_info_could_not_be_loaded">User data could not be loaded</string>
+    <string name="preferences_title">Account preferences</string>
+
+    <!-- file uploads -->
+    <string name="invalid_file_type_error">Upload failed: Invalid file type</string>
+    <string name="upload_failed_something_error">Upload failed: Something went wrong…</string>
+    <string name="profile_picture_upload_success">Profile picture successfully updated!</string>
+    <string name="profile_picture_update_failed">Profile picture update failed…</string>
+
+
+    <!-- general errors -->
+    <string name="fatal_network_error">We are sorry, but there was some serious internal connection error</string>
+    <string name="connection_error">Connection error</string>
+    <string name="invalid_credentials_error">Invalid credentials</string>
+    <string name="session_connection_lost_error">User %1$s lost connection, waiting for reconnect…</string>
+    <string name="session_connection_lost_error_general">User lost connection, waiting for reconnect…</string>
+    <string name="session_connection_reconnect_info">User %1$s is back online!</string>
+    <string name="session_connection_reconnect_info_general">User is back online!</string>
+    <string name="connection_error_1">Connection error, try again later</string>
+    <string name="connection_error_2">We are sorry, but the service is temporarily unavailable, try again later</string>
+    <string name="search_failed">Search failed</string>
+    <string name="something_error">Something went wrong</string>
+    <string name="no_internet_connection">No internet connection . . .</string>
+    <string name="location_required">Location is required for this activity.</string>
+    <string name="data_load_error_come_back_later"> We’re really sorry — something went wrong while loading the data. 😕
+            Don’t worry, we’re working on it. Please come back a little later. ❤️
+    </string>
+
+    <string name="opening_open_today">Open today %1$s – %2$s</string>
+    <string name="opening_closed_opens">Closed • Opens %1$s</string>
+    <string name="opening_today_closed">Today closed</string>
+
+    <!-- session termination eros -->
+    <string name="no_more_users_termination_message">All members left the session, session closed...</string>
+    <string name="matching_complete_termination_message">Matching complete</string>
+    <string name="closing_init_session_matching">Are you sure you want to close the init session?
+        This will remove all your votes and return you back to the main dashboard?! </string>
+
+    <!-- img icons descriptions -->
+    <string name="reject_btn_description">Reject</string>
+    <string name="accept_btn_description">Accept</string>
+    <string name="hm_btn_description">hm btn</string>
+    <string name="user_icon_description">User icon</string>
+    <string name="app_logo_icon_description">App logo</string>
+    <string name="person_icon_description">Person img</string>
+    <string name="card_image_description">Card image</string>
+
+    <!-- User settings -->
+    <string name="upload_thumbnail">New thumbnail</string>
+
+    <!-- General alert messages -->
+    <string name="alert_message_title_0">Warning</string>
+
+    <!-- Text placeholders -->
+    <string name="long_message_placeholder">This is awesome message</string>
+    <string name="short_message_placeholder">Short message</string>
+
+
+    <string name="dummy_username">Greg</string>
+    <string name="dummy_mail">greg@gmail.com</string>
+    <string name="not_quite_there_yet">Sr we are not quite there yet...</string>
+
+    <!-- Other -->
+    <string name="match_movie_text">Match a movie</string>
+    <string name="no_account_yet">Don\'t have account yet?</string>
+    <string name="create_account_now">Create it now!</string>
+    <string name="forgot_password_reset">Forgot password?</string>
+    <string name="connected_message">Connected</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tmdb_message">This product uses TMDb and the TMDb APIs but is not endorsed, certified, or otherwise approved by TMDb.</string>
+
+
+    <string name="confirmation_0">Ok, let\'s go!</string>
+    <string name="confirmation_1">Ok</string>
+    <string name="confirmation_2">Continue</string>
+
+    <string name="rejection_0">Remind me later</string>
+    <string name="rejection_1">No thanks</string>
+    <string name="rejection_2">No thanks, I don\'t want to do it now...</string>
+
+    <string name="loading_message_0">Loading data...</string>
+
+    <!-- Notification channels -->
+
+    <string name="session_invitations_channel_name">Session Invitation Channel</string>
+    <string name="session_invitations_channel_description">Receive notifications for new matching session invitations.</string>
+
+    <string name="friends_requests_channel_name">Friend Requests Channel</string>
+    <string name="friends_requests_channel_description">Get notified when you receive a new friend request.</string>
+
+    <string name="general_updates_channel_name">General Updates Channel</string>
+    <string name="general_updates_channel_description">Stay updated with general notifications and app status changes.</string>
+
+    <!-- restaurant parameters related -->
+
+    <string name="price_range_text">Max price</string>
+    <string name="rest_categories_text">Categories</string>
+
+    <string name="vegetarian_only_text">Vegetarian only 🌱</string>
+    <string name="bars_text">Bars &amp; Pubs 🍺</string>
+    <string name="buffet_text">Buffet / Cafeteria 🍽️</string>
+    <string name="cafes_text">Coffee ☕</string>
+    <string name="teas_text">Tea 🫖</string>
+    <string name="sweets_desserts_text">Desserts &amp; Sweets 🍩</string>
+    <string name="european_text">European 🇪🇺</string>
+    <string name="fast_food_text">Fast Food 🍔</string>
+    <string name="takeaway_text">Takeaway 📦</string>
+    <string name="fine_dining_text">Fine Dining 🍷</string>
+    <string name="latin_american_text">Latin American 🌮</string>
+    <string name="middle_eastern_text">Middle Eastern 🧆</string>
+    <string name="south_asian_text">Indian 🍛</string>
+    <string name="asian_text">Asian 🍜</string>
+    <string name="healthy_text">Healthy 💚</string>
+    <string name="show_filter_btn">Filters</string>
+    <string name="open_in_google_maps">Open in maps</string>
+    <string name="restaurant_address_title_text">Address</string>
+    <string name="image_author_text">Author:</string>
+    <string name="image_author_uri">Author\'s URI:</string>
+    <string name="open_uri">Open URI</string>
+    <string name="address">Address: </string>
+
+    <string name="city_empty_error">City must be filled</string>
+    <string name="no_category_selected">At least one category must be selected</string>
+    <string name="fill_form_first">Form must be filled in</string>
+
+    <!-- Chat specific -->
+    <string name="chat_messages_load_failure">Loading chat history failed</string>
+    <string name="sending_message_failure">Sending message failed</string>
+    <string name="bottom_nav_history_sessions_title">History</string>
+    <string name="chat_message_status_sending">sending...</string>
+    <string name="chat_message_status_sent">sent</string>
+    <string name="matched_cards_title_in_text">YOUR MATCH</string>
+    <string name="unread_chat_message_simple_info">You have unread chat messages.</string>
+
+    <!-- Interactive widgets -->
+    <string name="you_on_the_map_text">You</string>
+
+    <string name="exit_chat_text">Close chat</string>
+
+    <!-- Sessions history -->
+    <string name="sessions_history_load_failed">Loading history failed</string>
+    <string name="no_history_data_text">No historical sessions yet</string>
+
+
+    <string name="dialog_accept_text">Yes</string>
+    <string name="dialog_reject_text">No</string>
+
+
+</resources>

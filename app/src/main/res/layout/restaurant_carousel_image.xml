@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<com.google.android.material.carousel.MaskableFrameLayout use this for the google carousel effect -->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/maskable_frame"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    app:shapeAppearance="?attr/shapeAppearanceLargeComponent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        android:layout_marginHorizontal="3dp"
+        app:cardUseCompatPadding="false">
+
+    <ImageView
+        android:id="@+id/restaurant_carousel_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/no_image_placeholder"
+        android:scaleType="centerCrop"
+        />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/attributions_btn"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="8dp"
+            android:alpha="0.7"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:padding="5dp"
+            android:text="i"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:backgroundTint="@color/black"
+            app:cornerRadius="20dp" />
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

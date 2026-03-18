@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.matchingSession.matching.SessionMatchingFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/main_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            app:logo="@drawable/ic_activity_selection"
+            app:contentInsetStart="16dp"
+            app:contentInsetEnd="8dp"
+            app:contentInsetStartWithNavigation="8dp"
+
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            >
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false">
+
+        <RelativeLayout
+            android:id="@+id/button_container"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="8dp"
+            android:clipChildren="false"
+            android:orientation="horizontal"
+            android:elevation="40dp"
+            >
+
+
+            <!-- app:backgroundTint="#FFFFF1" -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/skip_button"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/hm_button"
+                android:contentDescription="@string/hm_btn_description"
+                app:backgroundTint="#FFFFF1"
+
+                android:translationY="-8dp"
+
+                app:iconGravity="textEnd"
+                app:icon="@drawable/ic_no_vote"
+                app:iconTint="@null"
+                app:rippleColor="#22ED7563"
+                app:iconSize="50dp"
+                android:padding="0dp"
+                app:iconPadding="0dp"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                app:shapeAppearanceOverlay="@style/FabCircleShape"
+                />
+
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/hm_button"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+
+                app:backgroundTint="#FFFFF1"
+                app:rippleColor="#22546E7A"
+
+                app:icon="@drawable/ic_hm_vote"
+                app:iconTint="@android:color/holo_blue_light"
+                app:iconGravity="textStart"
+
+                app:iconSize="28dp"
+                android:padding="0dp"
+                app:iconPadding="0dp"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                app:shapeAppearanceOverlay="@style/FabCircleShape"
+
+                />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/like_button"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/hm_button"
+                android:src="@drawable/ic_love_vote"
+                app:rippleColor="#43A047"
+                app:maxImageSize="40dp"
+                app:backgroundTint="#FFFFF1"
+
+                android:translationY="-8dp"
+
+                app:icon="@drawable/ic_love_vote"
+                app:iconTint="@null"
+                app:iconGravity="textStart"
+                app:iconSize="50dp"
+                android:padding="0dp"
+                app:iconPadding="0dp"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                app:shapeAppearanceOverlay="@style/FabCircleShape"
+                />
+
+            <!--<com.google.android.material.button.MaterialButton
+                android:id="@+id/share_button"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+
+                android:layout_toEndOf="@+id/like_button"
+
+
+
+                android:translationY="4dp"
+                android:translationX="15dp"
+
+                app:iconSize="75dp"
+                app:backgroundTint="#FFFFF1"
+                app:icon="@drawable/ic_share"
+                app:iconGravity="textStart"
+
+                app:iconTint="@color/black"
+                app:maxImageSize="7045dp"
+                app:rippleColor="#43A047"
+
+                android:padding="0dp"
+                app:iconPadding="0dp"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                app:shapeAppearanceOverlay="@style/FabCircleShape" />-->
+        </RelativeLayout>
+
+        <com.yuyakaido.android.cardstackview.CardStackView
+            android:id="@+id/card_stack_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/button_container"
+            android:clipToPadding="false"
+            android:layout_marginBottom="-5dp"
+            android:elevation="20dp"
+            />
+
+        <FrameLayout
+            android:id="@+id/card_detail_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:elevation="25dp" />
+
+        <LinearLayout
+            android:id="@+id/loading_cards_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/cards_progressbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:id="@+id/loading_data_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/loading_message_0"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+

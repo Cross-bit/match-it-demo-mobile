@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.matchingSession.matching.cards.restaurants.RestaurantMatchCardFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/restaurant_card_view"
+        android:transitionName="card_transition_@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Movie poster -->
+
+            <FrameLayout
+                android:id="@+id/frameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+
+
+                app:layout_constraintBottom_toTopOf="@+id/movie_info">
+
+
+                <ImageView
+                    android:id="@+id/card_overlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="@drawable/card_image_gradient"
+                    android:contentDescription="@string/card_image_description"
+
+                    />
+
+                <ImageView
+                    android:id="@+id/card_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:contentDescription="@string/card_image_description"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/avatar_poster_thumbnail_small"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/attributions_btn"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="8dp"
+                    app:cornerRadius="20dp"
+                    android:padding="5dp"
+                    android:text="i"
+                    android:textSize="20sp"
+                    android:alpha="0.7"
+                    app:backgroundTint="@color/black"
+                    android:textAllCaps="false"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:textColor="@color/white"
+                    />
+
+            </FrameLayout>
+
+            <!-- Movie info and description -->
+
+
+            <LinearLayout
+                android:id="@+id/movie_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+
+                android:paddingHorizontal="8dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/card_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="1"
+                        android:paddingTop="6dp"
+                        android:text="Avatar (2009)"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:orientation="vertical"
+                        android:paddingTop="7dp"
+                        android:paddingEnd="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical|end"
+                            android:orientation="horizontal"
+
+                            >
+
+                            <TextView
+                                android:id="@+id/google_rating"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+
+                                android:layout_marginBottom="2dp"
+                                android:text="4.5"
+                                android:textSize="25sp" />
+
+                            <ImageView
+                                android:layout_width="27dp"
+                                android:layout_height="27dp"
+                                android:src="@drawable/ic_star_rate">
+                            </ImageView>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/google_review_note"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+
+                            android:layout_marginBottom="2dp"
+                            android:text="(from google)"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.chip.ChipGroup
+
+                        android:id="@+id/type_chips_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:chipSpacingVertical="-7dp"
+                        app:singleLine="false">
+
+                    </com.google.android.material.chip.ChipGroup>
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/features_chips_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:chipSpacingVertical="-7dp"
+                        android:layout_marginTop="-8dp"
+                        app:singleLine="false">
+
+                    </com.google.android.material.chip.ChipGroup>
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/open_in_maps_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/open_in_google_maps"
+                    android:textColor="@color/app_base_color"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="(Tap for more)"
+                android:textAlignment="center"
+                android:textSize="15dp"
+                android:layout_marginBottom="17dp"
+            >
+
+
+            </TextView>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/overlay_like"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0"
+            android:scaleType="centerCrop"
+            android:src="@drawable/overlay_like" />
+
+        <ImageView
+            android:id="@+id/overlay_dislike"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0"
+            android:scaleType="centerCrop"
+            android:src="@drawable/overlay_dislike" />
+
+        <ImageView
+            android:id="@+id/overlay_neutral"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0"
+            android:scaleType="centerCrop"
+            android:src="@drawable/overlay_neutral" />
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

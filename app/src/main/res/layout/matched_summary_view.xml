@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/matched_summary_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+    <include
+        android:id="@+id/main_card"
+        android:layout_width="260dp"
+        android:layout_height="310dp"
+        layout="@layout/matched_card_medium"/>
+
+    <TextView
+        android:id="@+id/other_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/other_possible_cards_title"
+        android:gravity="center"
+        android:padding="4dp"
+        android:textSize="20sp"
+        />
+
+    <LinearLayout
+        android:id="@+id/otherCards"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="15dp">
+
+        <!--<include
+            layout="@layout/matched_card_small"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:layout_weight="1"
+            />
+
+        <include
+            layout="@layout/matched_card_small"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:layout_weight="1"/>
+
+        <include
+            layout="@layout/matched_card_small"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:layout_weight="1"/>-->
+
+    </LinearLayout>
+
+</LinearLayout>
+</merge>

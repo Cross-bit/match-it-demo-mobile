@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/activitiesDashboardFragment">
+    <fragment
+        android:id="@+id/activitiesDashboardFragment"
+        android:name="com.example.matchit.ui.activitiesDashboard.ActivitiesDashboardFragment"
+        android:label="fragment_activities_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_activitiesDashboardFragment_to_friendsListFragment"
+            app:destination="@id/friendsListFragment"
+
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+        <action
+            android:id="@+id/action_activitiesDashboardFragment_to_userPreferencesFragment"
+            app:destination="@id/userPreferencesFragment" />
+        <action
+            android:id="@+id/action_activitiesDashboardFragment_to_sessionHistoryChatsFragment"
+            app:destination="@id/sessionHistoryChatsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/friendsListFragment"
+        android:name="com.example.matchit.ui.socialConnections.FriendsListFragment"
+        android:label="fragment_friends_list"
+        tools:layout="@layout/fragment_friends_list" >
+
+        <action
+            android:id="@+id/action_friendsListFragment_to_activitiesDashboardFragment"
+            app:destination="@id/activitiesDashboardFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_friendsListFragment_to_searchPersonFragment"
+            app:destination="@id/searchPersonFragment" />
+        <action android:id="@+id/action_friendsListFragment_to_friendRequestsFragment"
+                app:destination="@id/friendRequestsFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/friendsListFragment2"
+        android:name="com.example.matchit.ui.socialConnections.FriendsListFragment"
+        android:label="fragment_friends_list"
+        tools:layout="@layout/fragment_friends_list">
+
+        <action
+            android:id="@+id/action_friendsListFragment_to_activitiesDashboardFragment"
+            app:destination="@id/activitiesDashboardFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_friendsListFragment_to_searchPersonFragment"
+            app:destination="@id/searchPersonFragment" />
+        <action
+            android:id="@+id/action_friendsListFragment_to_friendRequestsFragment"
+            app:destination="@id/friendRequestsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchPersonFragment"
+        android:name="com.example.matchit.ui.socialConnections.peopleSearch.FragmentSearchUserFragment"
+        android:label="fragment_search_person"
+        tools:layout="@layout/fragment_search_user" >
+        <action android:id="@+id/action_searchPersonFragment_to_friendsListFragment"
+                app:destination="@id/friendsListFragment"
+                app:popEnterAnim="@android:anim/slide_in_left"
+                app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/friendRequestsFragment"
+        android:name="com.example.matchit.ui.socialConnections.friendRequests.FriendRequestListFragment"
+        android:label="fragment_friend_requests_list"
+        tools:layout="@layout/fragment_friend_requests_list" >
+        <action android:id="@+id/action_friendRequestsFragment_to_friendsListFragment"
+                app:destination="@id/friendsListFragment"
+                app:popEnterAnim="@android:anim/slide_in_left"
+                app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/userPreferencesFragment"
+        android:name="com.example.matchit.ui.userPreferences.UserPreferencesFragment"
+        android:label="fragment_user_preferences"
+        tools:layout="@layout/fragment_user_preferences" >
+        <action
+            android:id="@+id/action_userPreferencesFragment_to_activitiesDashboardFragment"
+            app:destination="@id/activitiesDashboardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sessionHistoryChatsFragment"
+        android:name="com.example.matchit.ui.sessionHistoryChats.SessionHistoryChatsFragment"
+        android:label="fragment_session_history_chats"
+        tools:layout="@layout/fragment_session_history_chats" >
+        <action
+            android:id="@+id/action_sessionHistoryChatsFragment_to_activitiesDashboardFragment"
+            app:destination="@id/activitiesDashboardFragment" />
+        <action
+            android:id="@+id/action_sessionHistoryChatsFragment_to_chatWindowFragment"
+            app:destination="@id/chatWindowFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatWindowFragment"
+        android:name="com.example.matchit.ui.chatting.ChatWindowFragment"
+        android:label="ChatWindowFragment" >
+
+        <argument
+            android:name="sessionUUID"
+            app:argType="string" />
+
+    </fragment>
+
+
+</navigation>

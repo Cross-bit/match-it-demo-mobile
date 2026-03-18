@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="movie_match_base">#0B47AC</color>
+    <color name="food_match_base">#E7C47B</color>
+    <color name="app_base_color">#835BDF</color>
+
+    <color name="yellow500">#EFE3CF</color>
+
+    <color name="purple900">#0000d6</color>
+    <color name="purple800">#1c00db</color>
+    <color name="purple700">#3d00e0</color>
+    <color name="purple600">#5300e8</color>
+    <color name="purple500">#6002ee</color>
+    <color name="purple400">#7e3ff2</color>
+    <color name="purple300">#9965f4</color>
+    <color name="purple200">#b794f6</color>
+    <color name="purple100">#d4bff9</color>
+    <color name="purple50">#efe5fd</color>
+
+
+    <color name="btn_like_primary">#5DC14B</color>
+    <color name="btn_dislike_primary">#D53D3D</color>
+    <color name="btn_hm_primary">#615B5B</color>
+    <color name="btn_admit_friend_request">#4CAF50</color>
+    <color name="invite_rejected_label">#f42069</color>
+
+
+</resources>
