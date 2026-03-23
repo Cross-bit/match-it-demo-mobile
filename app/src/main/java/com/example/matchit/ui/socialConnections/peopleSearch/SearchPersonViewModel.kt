@@ -6,6 +6,7 @@ import com.example.matchit.R
 import com.example.matchit.data.remote.client.ApiErrors.ApiError
 import com.example.matchit.data.remote.client.Resource
 import com.example.matchit.data.search.SearchPersonRepositoryImpl
+import com.example.matchit.data.users.UsersRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -13,6 +14,7 @@ import javax.inject.Inject
 @HiltViewModel
 class SearchPeopleViewModel @Inject constructor(
     private val searchPersonRepository: SearchPersonRepositoryImpl,
+    private val usersRepository: UsersRepository
 ) : ViewModel() {
 
     private val _searchResult = MutableLiveData<SearchResult>()
@@ -28,9 +30,15 @@ class SearchPeopleViewModel @Inject constructor(
             when (val result = searchPersonRepository.searchPerson(email)) {
                 is Resource.Success -> {
                     val person = result.data.person
+
+                    val avatarUrl = when (val userResult = usersRepository.fetchUserData(person.uuid)) {
+                        is Resource.Success -> userResult.data.avatarUrl
+                        else -> null
+                    }.toString()
+
                     val personItem = SearchPersonItem(
                         person.uuid,
-                        R.drawable.ic_friends_icon,
+                        avatarUrl,
                         person.name,
                         person.isFriend,
                         person.hasInvitation

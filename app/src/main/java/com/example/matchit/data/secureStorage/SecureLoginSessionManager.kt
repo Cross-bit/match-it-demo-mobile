@@ -22,13 +22,25 @@ class SecureLoginSessionManager @Inject constructor(
             .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
             .build()
 
-        EncryptedSharedPreferences.create(
-            context,
-            FILE_NAME,
-            masterKey,
-            EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
-            EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
-        )
+        try {
+            EncryptedSharedPreferences.create(
+                context,
+                FILE_NAME,
+                masterKey,
+                EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+                EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+            )
+        } catch (e: Exception) {
+            // in case data are already preset we have to delete the old
+            context.deleteSharedPreferences(FILE_NAME)
+            EncryptedSharedPreferences.create(
+                context,
+                FILE_NAME,
+                masterKey,
+                EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+                EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+            )
+        }
     }
 
     override suspend fun saveAuthToken(token: String) {

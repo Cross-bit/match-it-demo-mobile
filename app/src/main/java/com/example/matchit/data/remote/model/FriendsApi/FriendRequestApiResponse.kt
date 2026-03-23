@@ -10,7 +10,7 @@ data class FriendRequestApiResponse(
 )
 
 data class FriendRequestFriendDataApiResponse(
+    val uuid: String,
     val name: String,
-    val email: String,
-    val profilePicUrl: String = ""
+    val email: String
 )

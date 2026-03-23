@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.matchit.R
 
 class SearchPersonAdapter(private val viewModel: SearchPeopleViewModel) : RecyclerView.Adapter<SearchPersonAdapter.ViewHolder>() {
@@ -24,7 +25,20 @@ class SearchPersonAdapter(private val viewModel: SearchPeopleViewModel) : Recycl
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = data[position]
-        holder.bind(item)
+
+        Glide.with(holder.thumbnailImage)
+            .load(item.thumbnail)
+            .placeholder(R.drawable.ic_person)
+            .error(R.drawable.ic_person)
+            .into(holder.thumbnailImage)
+
+        holder.username.text = item.username
+        holder.addToFriendsButton.visibility = if (item.hasInvitation or item.isFriend) View.GONE else View.VISIBLE
+
+        holder.addToFriendsButton.setOnClickListener {
+            viewModel.sendFriendRequest(item.userUUID)
+            it.visibility = View.GONE // TODO Will be better it.visibility = if was not request send yet
+        }
     }
 
     override fun getItemCount(): Int {
@@ -32,19 +46,9 @@ class SearchPersonAdapter(private val viewModel: SearchPeopleViewModel) : Recycl
     }
 
     class ViewHolder(itemView: View, private val viewModel: SearchPeopleViewModel) : RecyclerView.ViewHolder(itemView) {
-        private val thumbnailImage: ImageView = itemView.findViewById(R.id.thumbnail)
-        private val username: TextView = itemView.findViewById(R.id.username)
-        private val addToFriendsButton: Button = itemView.findViewById(R.id.add_to_friends_button)
+        val thumbnailImage: ImageView = itemView.findViewById(R.id.thumbnail)
+        val username: TextView = itemView.findViewById(R.id.username)
+        val addToFriendsButton: Button = itemView.findViewById(R.id.add_to_friends_button)
 
-        fun bind(item: SearchPersonItem) {
-            thumbnailImage.setImageResource(item.thumbnail)
-            username.text = item.username
-            addToFriendsButton.visibility = if (item.hasInvitation or item.isFriend) View.GONE else View.VISIBLE
-
-            addToFriendsButton.setOnClickListener {
-                viewModel.sendFriendRequest(item.userUUID)
-                it.visibility = View.GONE // TODO Will be better it.visibility = if was not request send yet
-            }
-        }
     }
 }

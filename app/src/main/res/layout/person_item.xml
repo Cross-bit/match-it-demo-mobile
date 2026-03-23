@@ -12,20 +12,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        <ImageView
-                android:id="@+id/thumbnail"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginStart="20dp"
-                android:adjustViewBounds="true"
-                android:padding="8dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/ic_person"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:contentDescription="@string/person_icon_description"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="15dp"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+
+            app:layout_constraintHorizontal_bias="0.5"
+            app:shapeAppearanceOverlay="@style/Circular"
+            android:padding="8dp"
+            android:src="@drawable/ic_person"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             />
+
 
         <TextView
                 android:id="@+id/username"

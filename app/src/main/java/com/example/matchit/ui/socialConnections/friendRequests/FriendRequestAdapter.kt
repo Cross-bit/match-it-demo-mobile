@@ -7,11 +7,13 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.matchit.R
 
 
 data class RequestItem(val requestId: String, val friendsData: RequestPersonData)
-data class RequestPersonData(val thumbnail: Int, val username: String, val email: String)
+data class RequestPersonData(val thumbnail: String?, val username: String, val email: String)
+
 class IncomingFriendsRequestsAdapter(private val dataList: ArrayList<RequestItem>, private val viewModel: FriendRequestsListViewModel) : RecyclerView.Adapter<IncomingFriendsRequestsAdapter.RequestViewHolder>() {
     class RequestViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -40,7 +42,15 @@ class IncomingFriendsRequestsAdapter(private val dataList: ArrayList<RequestItem
     override fun onBindViewHolder(holder: RequestViewHolder, position: Int) {
         val currentItem = dataList[position]
 
-        holder.thumbnailImage.setImageResource(currentItem.friendsData.thumbnail)
+        //holder.thumbnailImage.setImageResource(currentItem.friendsData.thumbnail)
+
+        Glide.with(holder.thumbnailImage)
+            .load(currentItem.friendsData.thumbnail)
+            .placeholder(R.drawable.ic_person)
+            .error(R.drawable.ic_person)
+            .into(holder.thumbnailImage)
+
+
         holder.username.text = currentItem.friendsData.username
 
         holder.admitRequestButton.setOnClickListener {

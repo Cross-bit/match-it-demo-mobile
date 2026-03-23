@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.matchit.R
 import com.example.matchit.data.friendships.FriendsRepositoryImpl
 import com.example.matchit.data.notifications.pushNotifications.NotificationDispatcher
+import com.example.matchit.data.users.UsersRepository
 import com.example.matchit.data.remote.client.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -16,7 +17,8 @@ import javax.inject.Inject
 @HiltViewModel
 class FriendRequestsListViewModel @Inject constructor(
     private val friendsRepository: FriendsRepositoryImpl,
-    private val notificationDispatcher: NotificationDispatcher
+    private val notificationDispatcher: NotificationDispatcher,
+    private val usersRepository: UsersRepository
 ) : ViewModel() {
 
     private val _allRequestData = MutableLiveData<List<RequestItem>>()
@@ -30,18 +32,20 @@ class FriendRequestsListViewModel @Inject constructor(
         viewModelScope.launch {
             when (val result = friendsRepository.getAllFriendshipCreationRequests()) {
                 is Resource.Success -> {
-                    val requests = result.data.requests
-                    val allRequestData: List<RequestItem> = requests.map { request ->
+                    val allRequestData: List<RequestItem> = result.data.requests.map { request ->
+                        val avatarUrl = when (val userResult = usersRepository.fetchUserData(request.friendData.uuid)) {
+                            is Resource.Success -> userResult.data.avatarUrl
+                            else -> null
+                        }
                         RequestItem(
                             request.requestId,
                             RequestPersonData(
-                                R.drawable.ic_friends_icon, // Assuming R.drawable.ic_friends_icon is your default drawable
+                                avatarUrl,
                                 request.friendData.name,
                                 request.friendData.email
                             )
                         )
                     }
-
                     _allRequestData.value = allRequestData
                 }
                 else -> {
