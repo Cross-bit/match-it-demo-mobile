@@ -15,7 +15,7 @@ shared voting session, swipe through activity
 recommendations, and reach a group consensus. 
 Currently **movie matching** is supported.
 
-A short showcase of the application is available [here](https://drive.google.com/file/d/13WdtzGqauqGs-amZH_CfoRhOnkDSGJc6/view?usp=drive_link).
+A short showcase of the application is available [here](https://youtu.be/MYrbK1zM0lk?si=Bxf3wih-Kt6TvfYU).
 
 ---
 
