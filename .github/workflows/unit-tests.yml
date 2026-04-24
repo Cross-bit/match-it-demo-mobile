@@ -27,6 +27,35 @@ jobs:
           GOOGLE_MAPS_API_KEY=dummy
           EOF
 
+      - name: Prepare dummy google-services.json
+        run: |
+          mkdir -p app
+          cat <<'EOF' > app/google-services.json
+          {
+            "project_info": {
+              "project_number": "1234567890",
+              "project_id": "dummy-project",
+              "storage_bucket": "dummy-project.appspot.com"
+            },
+            "client": [
+              {
+                "client_info": {
+                  "mobilesdk_app_id": "1:1234567890:android:dummy123456",
+                  "android_client_info": {
+                    "package_name": "com.example.matchit"
+                  }
+                },
+                "api_key": [
+                  {
+                    "current_key": "dummy"
+                  }
+                ]
+              }
+            ],
+            "configuration_version": "1"
+          }
+          EOF
+
       - name: Make Gradle executable
         run: chmod +x gradlew
 
