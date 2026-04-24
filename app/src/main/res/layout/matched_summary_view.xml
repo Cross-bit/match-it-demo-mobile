@@ -31,25 +31,6 @@
         android:orientation="horizontal"
         android:layout_marginHorizontal="15dp">
 
-        <!--<include
-            layout="@layout/matched_card_small"
-            android:layout_width="0dp"
-            android:layout_height="180dp"
-            android:layout_weight="1"
-            />
-
-        <include
-            layout="@layout/matched_card_small"
-            android:layout_width="0dp"
-            android:layout_height="180dp"
-            android:layout_weight="1"/>
-
-        <include
-            layout="@layout/matched_card_small"
-            android:layout_width="0dp"
-            android:layout_height="180dp"
-            android:layout_weight="1"/>-->
-
     </LinearLayout>
 
 </LinearLayout>

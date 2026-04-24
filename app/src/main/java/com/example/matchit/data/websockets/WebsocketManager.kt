@@ -177,8 +177,6 @@ class WebsocketManager @Inject constructor(
                 trySendNext()
             }
 
-            //flushOutgoingMessagesQueue()
-
             scope.launch {
                 _connectionEvents.emit(WebSocketEvent.ConnectionOpened)
             }
@@ -331,7 +329,6 @@ class WebsocketManager @Inject constructor(
         try { // for case ... we make some mistake and not dispose the webSocket before ...
             webSocket?.cancel()
         } catch (e: Exception) {
-            //return false
             Log.e("WS", "Error cancelling previous socket: ${e.message}")
         }
 
@@ -554,8 +551,6 @@ class WebsocketManager @Inject constructor(
         // Clean the queue
         inFlight = null
         reliableSendQueue.clear()
-
-        //disconnect()
     }
 
 

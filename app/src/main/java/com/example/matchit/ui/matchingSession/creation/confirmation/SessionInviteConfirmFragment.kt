@@ -19,7 +19,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.matchit.R
 import com.example.matchit.data.model.session.SessionType
 import com.example.matchit.databinding.FragmentSessionInviteConfirmBinding
-import com.example.matchit.ui.MainActivity
 import com.example.matchit.ui.common.setupDoubleBackPress
 import com.example.matchit.ui.launch.LaunchActivity
 import com.example.matchit.ui.matchingSession.creation.confirmation.banners.InviteConfirmMovieFragment
@@ -65,7 +64,6 @@ class SessionInviteConfirmFragment : Fragment() {
         val rejectInviteBtn = binding.sessionRejectBtn
         val progressBar = binding.sessionProgressBar
         invitationBanner = binding.bannerContainer
-        //sessionOptionsBtn = binding.sessionOptionsBtn
 
         viewLifecycleOwner.lifecycleScope.launch {
             sessionConfirmationViewModel.sessionCreatorName.collectLatest {
@@ -163,13 +161,6 @@ class SessionInviteConfirmFragment : Fragment() {
         // make sure we have location permissions
         requestLocationPermission()
 
-        /*sessionOptionsBtn.visibility = View.VISIBLE
-
-        sessionOptionsBtn.setOnClickListener {
-            val bottomSheet = BottomSheetFragment.newInstance(RestaurantParametersFragment::class.java)
-            bottomSheet.show(childFragmentManager, bottomSheet.tag)
-        }*/
-
         childFragmentManager.beginTransaction()
             .add(invitationBanner.id, InviteConfirmRestaurantFragment())
             .commit()
@@ -202,10 +193,6 @@ class SessionInviteConfirmFragment : Fragment() {
         val intent = Intent(requireContext(), LaunchActivity::class.java)
         startActivity(intent)
         requireActivity().finish()
-
-        /*val intent = Intent(activity, MainActivity::class.java) // we actually open launch activity to ensure user is still authenticated
-        startActivity(intent)
-        requireActivity().finish()*/
     }
 
 }

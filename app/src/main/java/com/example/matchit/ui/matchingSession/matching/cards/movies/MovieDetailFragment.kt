@@ -140,8 +140,6 @@ class MovieDetailFragment : Fragment() {
                 .withEndAction {
                     behavior.isDraggable = true
                     behavior.state = BottomSheetBehavior.STATE_EXPANDED
-
-                   // startYoutubePlayer()
                 }
                 .start()
         }

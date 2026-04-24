@@ -51,7 +51,6 @@ class LoginFragment : Fragment() {
         val loginBtn = binding.loginBtn
         val registerBtn = binding.signUpBtn
         val loadingProgressBar = binding.loading
-        //val forgotPasswordBtn = binding.forgotPasswordBtn
 
         // Every time we are validating the text
         loginViewModel.loginFormState.observe(viewLifecycleOwner,

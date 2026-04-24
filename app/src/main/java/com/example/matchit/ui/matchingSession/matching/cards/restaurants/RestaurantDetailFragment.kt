@@ -265,16 +265,11 @@ class RestaurantDetailFragment : Fragment(), RestaurantImageCarouselAdapter.OnIt
 
             val restaurantPos = cardData.location.toLatLng()
 
-            //val bitmap = createMarkerWithPin(requireContext(), R.drawable.ic_restaurant)
-            /*val bitmap = getBitmapFromVectorDrawable(requireContext(), R.drawable.ic_restaurant)
-            val small = Bitmap.createScaledBitmap(bitmap, 120, 120, false)*/
-
             googleMap.addMarker(
                 MarkerOptions()
                 .position(restaurantPos)
                 .title("Restaurant")
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
-                //.icon(BitmapDescriptorFactory.fromBitmap(small))
             )
 
             googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(restaurantPos, 15f))

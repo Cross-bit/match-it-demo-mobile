@@ -75,9 +75,9 @@ class SessionInviteMembersListFragment : Fragment() {
         val spinner = binding.algorithmSelector.algorithmSpinner
 
         val algorithms = listOf(
-            "Sync (S1)" to AlgorithmType.SYNC,
-            "Async (A3)" to AlgorithmType.ASYNC,
-            "Hybrid (H1)" to AlgorithmType.HYBRID
+            "Sync" to AlgorithmType.SYNC,
+            "Async" to AlgorithmType.ASYNC,
+            "Hybrid" to AlgorithmType.HYBRID
         )
 
         val adapter = ArrayAdapter(

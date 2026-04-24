@@ -141,7 +141,6 @@ class SessionInviteConfirmViewModel @Inject constructor(
                                 // reset the state
                                 isAccepting = true
                                 notificationDispatcher.invalidateSessionInvite()
-                                //invitedSessionUUID = null
                         } else {
                                 _sessionTerminatedEvent.emit(R.string.session_connection_failed)
                                 Log.e("sessionConfirmationError", "Session invite confirmation failed")

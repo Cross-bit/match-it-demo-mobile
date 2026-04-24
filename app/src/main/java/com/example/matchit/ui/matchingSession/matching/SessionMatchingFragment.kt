@@ -508,7 +508,6 @@ class SessionMatchingFragment : Fragment(), CardStackListener  {
                         viewModel.clearBadge()
 
                         // we assure that user really wants to quit...
-                        //findNavController().navigate(R.id.action_sessionMatchingFragment_to_chatWindowFragment)
 
                         val sessionUUID = viewModel.getCurrentSessionUUID()
 
