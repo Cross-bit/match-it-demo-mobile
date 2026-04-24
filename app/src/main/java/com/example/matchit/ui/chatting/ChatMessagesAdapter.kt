@@ -125,7 +125,7 @@ class ChatMessagesAdapter (
 
     private fun bindStatus(holder: MessageBubbleViewHolder, bubble: ChatBubble) {
 
-        // if not mine we never show it TODO:
+        // if not mine we never show it
         /*if (!bubble.isMine) {
             holder.messageStatus.visibility = View.GONE
             return

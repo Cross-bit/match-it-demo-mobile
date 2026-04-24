@@ -13,5 +13,5 @@ import com.example.matchit.data.model.session.MovieCardData
 data class MatchingResultApiResponse(
     val matched: Boolean,
     val nextDeckOfCards: List<MovieCardData>,
-    val matchedItemUUID: String // TODO: this is actually jst internal item Id not UUID... change it (has to be changed also in the backend)
+    val matchedItemUUID: String
 )

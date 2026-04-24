@@ -15,6 +15,7 @@ import com.example.matchit.databinding.FragmentLoginBinding
 class ForgotPasswordFragment : Fragment() {
     private lateinit var _binding: FragmentForgotPasswordBinding
 
+    // Placeholder screen: reset-password backend flow is prepared for future implementation.
     private lateinit var viewModel: ForgotPasswordViewModel
 
     override fun onCreateView(

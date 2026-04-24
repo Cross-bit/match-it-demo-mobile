@@ -201,7 +201,7 @@ class SessionInviteViewModel @Inject constructor(
                             it.uuid,
                             it.profilePicUrl,
                             it.name,
-                            if (availableFriends.contains(it.uuid)) FriendInviteListItem.InvitationState.INVITABLE else FriendInviteListItem.InvitationState.NOT_INVITABLE //TODO: add state that would state availability explicitly
+                            if (availableFriends.contains(it.uuid)) FriendInviteListItem.InvitationState.INVITABLE else FriendInviteListItem.InvitationState.NOT_INVITABLE
                         )
                     })
 
@@ -380,7 +380,6 @@ class SessionInviteViewModel @Inject constructor(
                     }
                 }
                 else -> {
-                    //TODO:
                 }
             }
         }

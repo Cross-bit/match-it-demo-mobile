@@ -23,7 +23,7 @@ import javax.inject.Inject
         // positive reply intent
         /*val intent = Intent(context, SessionActivity::class.java)
 
-        // negative dismissIntent //TODO: factor this out ... probably some kind of ... factory would be nice
+        // negative dismissIntent
         val dismissIntent = Intent(context, NotificationDismissedReceiver::class.java).apply {
             action = NotificationDismissedReceiver.ACTION_NOTIFICATION_DISMISS
             putExtra(NotificationDismissedReceiver.EXTRA_NOTIFICATION_TYPE, type.value)

@@ -7,7 +7,7 @@
     tools:context=".ui.MainActivity"
     android:background="#FAF8F7"
     >
-    <!-- NOTE: this should be actually used for navigation > 3 ... TODO: better UI design... -->
+    <!-- This layout can be extended if navigation grows beyond three tabs. -->
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/main_nav_host_fragment"

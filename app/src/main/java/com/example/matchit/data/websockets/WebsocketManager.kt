@@ -120,7 +120,7 @@ class WebsocketManager @Inject constructor(
 
     private var webSocket: WebSocket? = null
 
-    private val reconnectScope = CoroutineScope(Dispatchers.IO + SupervisorJob()) // TODO: do we need this?
+    private val reconnectScope = CoroutineScope(Dispatchers.IO + SupervisorJob())
 
     private val MAX_SOCKET_LIFETIME_MS = 2 * 60 * 1000L
     private val MAX_MESSAGE_SIZE = 1024 * 64  // max size of

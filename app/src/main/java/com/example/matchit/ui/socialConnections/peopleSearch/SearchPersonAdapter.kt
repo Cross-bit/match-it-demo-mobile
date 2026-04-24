@@ -37,7 +37,7 @@ class SearchPersonAdapter(private val viewModel: SearchPeopleViewModel) : Recycl
 
         holder.addToFriendsButton.setOnClickListener {
             viewModel.sendFriendRequest(item.userUUID)
-            it.visibility = View.GONE // TODO Will be better it.visibility = if was not request send yet
+            it.visibility = View.GONE
         }
     }
 

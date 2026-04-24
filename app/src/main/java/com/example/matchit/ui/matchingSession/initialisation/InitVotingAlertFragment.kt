@@ -63,7 +63,6 @@ class InitVotingAlertFragment : Fragment() {
                         navController.navigate(R.id.action_initVotingAlert_to_initVotingMoviesFragment)
                     }
                     SessionType.RESTAURANT -> {
-                        // TODO: will we need this??
                     }
                     else ->
                         throw Exception("Wrong session type");

@@ -30,7 +30,8 @@ fun WebsocketOutDTO.toJson(): String {
 
 
 /**
- * Defines websockets message DTO for incoming messages (JsonElement is used specially for parsing in gson) ... TODO: maybe generic or other method would be evenutaly better if we decide to send other data than json, but ...for now I am fine with json data type as standard for everything
+ * Defines websockets message DTO for incoming messages.
+ * JsonElement is used to keep parsing flexible for different payload structures.
  */
 data class WebsocketInDTO (
     val sessionId: String?,

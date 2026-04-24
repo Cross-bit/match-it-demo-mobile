@@ -26,6 +26,6 @@ data class UserPreferences(val profilePictureUrl: String)
  */
 fun UserLoggedInApiResponse.toExternal() = LoggedInUser(
     displayName = name,
-    email = "johnsmail@gmail.com", // TODO: remove or resolve... :)
+    email = "johnsmail@gmail.com",
     uuid = uuid
 )
