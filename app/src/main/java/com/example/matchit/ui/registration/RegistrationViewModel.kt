@@ -69,7 +69,8 @@ constructor(private val signupRepository: RegistrationRepository ) : ViewModel()
         when(error) {
             SignupError.AlreadyExists ->
                 _signupForm.value = SignupFormState(emailError = R.string.user_already_exists)
-            is SignupError.Network -> TODO()
+            is SignupError.Network ->
+                _signupResult.value = RegistrationResult(error = R.string.connection_error_2)
             is SignupError.Validation ->{
                 val newFormState = aggregateErrors(error.errors)
                 _signupForm.value = newFormState
