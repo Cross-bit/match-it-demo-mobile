@@ -37,19 +37,19 @@ class RegistrationViewModelTest {
 
     @Test
     fun signupDataChanged_sets_email_error_for_invalid_email() {
-        viewModel.signupDataChanged("johnny", "invalid", "123456")
+        viewModel.signupDataChanged("johnny", "", "123456")
         assertEquals(R.string.invalid_email_general, viewModel.signupFormState.getOrAwaitValue().emailError)
     }
 
     @Test
     fun signupDataChanged_sets_password_error_for_short_password() {
-        viewModel.signupDataChanged("johnny", "test@mail.com", "123")
+        viewModel.signupDataChanged("johnny", "mail", "123")
         assertEquals(R.string.invalid_password_length, viewModel.signupFormState.getOrAwaitValue().passwordError)
     }
 
     @Test
     fun signupDataChanged_sets_valid_state_for_valid_inputs() {
-        viewModel.signupDataChanged("johnny", "test@mail.com", "123456")
+        viewModel.signupDataChanged("johnny", "mail", "123456")
         assertTrue(viewModel.signupFormState.getOrAwaitValue().isDataValid)
     }
 

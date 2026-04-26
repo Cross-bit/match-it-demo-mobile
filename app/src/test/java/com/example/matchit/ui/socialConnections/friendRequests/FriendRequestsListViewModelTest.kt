@@ -1,5 +1,6 @@
 package com.example.matchit.ui.socialConnections.friendRequests
 
+import android.util.Log
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.matchit.data.friendships.FriendsRepositoryImpl
 import com.example.matchit.data.notifications.pushNotifications.NotificationDispatcher
@@ -13,12 +14,17 @@ import com.example.matchit.data.users.UsersRepository
 import com.example.matchit.testutil.MainDispatcherRule
 import com.example.matchit.testutil.getOrAwaitValue
 import io.mockk.coEvery
+import io.mockk.every
 import io.mockk.mockk
+import io.mockk.mockkStatic
+import io.mockk.unmockkStatic
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
+import org.junit.After
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
@@ -36,6 +42,17 @@ class FriendRequestsListViewModelTest {
         notificationDispatcher,
         usersRepository
     )
+
+    @Before
+    fun setup() {
+        mockkStatic(Log::class)
+        every { Log.d(any(), any()) } returns 0
+    }
+
+    @After
+    fun tearDown() {
+        unmockkStatic(Log::class)
+    }
 
     @Test
     fun updateAllFriendRequests_sets_mapped_list_with_avatar() = runTest {

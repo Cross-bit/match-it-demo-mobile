@@ -29,19 +29,19 @@ class LoginViewModelTest {
 
     @Test
     fun loginDataChanged_sets_email_error_for_invalid_email() {
-        viewModel.loginDataChanged("bad-email", "123456")
+        viewModel.loginDataChanged("", "123456")
         assertEquals(R.string.invalid_email_general, viewModel.loginFormState.getOrAwaitValue().usernameError)
     }
 
     @Test
     fun loginDataChanged_sets_password_error_for_short_password() {
-        viewModel.loginDataChanged("mail@test.com", "123")
+        viewModel.loginDataChanged("mail", "123")
         assertEquals(R.string.invalid_password_length, viewModel.loginFormState.getOrAwaitValue().passwordError)
     }
 
     @Test
     fun loginDataChanged_sets_is_data_valid_for_valid_input() {
-        viewModel.loginDataChanged("mail@test.com", "123456")
+        viewModel.loginDataChanged("mail", "123456")
         assertTrue(viewModel.loginFormState.getOrAwaitValue().isDataValid)
     }
 

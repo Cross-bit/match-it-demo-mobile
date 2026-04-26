@@ -1,5 +1,6 @@
 package com.example.matchit.ui.activitiesDashboard
 
+import android.util.Log
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.matchit.data.model.authentication.LoggedInUser
 import com.example.matchit.data.model.session.SessionType
@@ -13,12 +14,16 @@ import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.justRun
 import io.mockk.mockk
+import io.mockk.mockkStatic
+import io.mockk.unmockkStatic
 import io.mockk.verify
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
+import org.junit.After
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
@@ -31,6 +36,17 @@ class ActivitiesDashboardViewModelTest {
     private val loginRepository: LoginRepository = mockk()
     private val accountRepository: UserAccountRepository = mockk()
     private val sessionRepository: SessionRepository = mockk()
+
+    @Before
+    fun setup() {
+        mockkStatic(Log::class)
+        every { Log.e(any(), any()) } returns 0
+    }
+
+    @After
+    fun tearDown() {
+        unmockkStatic(Log::class)
+    }
 
     private fun createViewModel(): ActivitiesDashboardViewModel {
         every { loginRepository.user } returns flowOf(LoggedInUser("Alice", "a@mail.com", "u1"))

@@ -1,5 +1,6 @@
 package com.example.matchit.ui.socialConnections.peopleSearch
 
+import android.util.Log
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.matchit.R
 import com.example.matchit.data.remote.client.ApiErrors.ApiError
@@ -12,11 +13,16 @@ import com.example.matchit.data.users.UsersRepository
 import com.example.matchit.testutil.MainDispatcherRule
 import com.example.matchit.testutil.getOrAwaitValue
 import io.mockk.coEvery
+import io.mockk.every
 import io.mockk.mockk
+import io.mockk.mockkStatic
+import io.mockk.unmockkStatic
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
+import org.junit.After
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
@@ -29,6 +35,17 @@ class SearchPeopleViewModelTest {
     private val searchRepo: SearchPersonRepositoryImpl = mockk()
     private val usersRepository: UsersRepository = mockk()
     private val viewModel = SearchPeopleViewModel(searchRepo, usersRepository)
+
+    @Before
+    fun setup() {
+        mockkStatic(Log::class)
+        every { Log.e(any(), any(), any()) } returns 0
+    }
+
+    @After
+    fun tearDown() {
+        unmockkStatic(Log::class)
+    }
 
     @Test
     fun updateSearchPersonByEmail_sets_person_result_on_success() = runTest {
