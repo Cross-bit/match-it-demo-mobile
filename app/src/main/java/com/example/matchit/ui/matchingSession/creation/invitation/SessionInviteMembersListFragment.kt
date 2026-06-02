@@ -6,8 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -19,7 +17,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.core.app.ApplicationProvider.getApplicationContext
 import com.example.matchit.R
-import com.example.matchit.data.model.session.AlgorithmType
 import com.example.matchit.databinding.FragmentSessionInviteMembersListBinding
 import com.example.matchit.ui.MainActivity
 import com.example.matchit.ui.matchingSession.creation.invitation.friendList.FriendInviteAdapter
@@ -67,39 +64,12 @@ class SessionInviteMembersListFragment : Fragment() {
         // fetch all friends data
         sessionInviteViewModel.loadAllFriendsData()
 
-        setupAlgorithmConfig()
+        setupFixedAlgorithmConfig()
     }
 
-    private fun setupAlgorithmConfig() {
-
-        val spinner = binding.algorithmSelector.algorithmSpinner
-
-        val algorithms = listOf(
-            "Sync" to AlgorithmType.SYNC,
-            "Async" to AlgorithmType.ASYNC,
-            "Hybrid" to AlgorithmType.HYBRID
-        )
-
-        val adapter = ArrayAdapter(
-            requireContext(),
-            android.R.layout.simple_spinner_item,
-            algorithms.map { it.first }
-        )
-
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner.adapter = adapter
-
-        spinner.onItemSelectedListener =
-            object : AdapterView.OnItemSelectedListener {
-
-                override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-
-                    val algorithm = algorithms[position].second
-                    sessionInviteViewModel.setAlgorithm(algorithm)
-                }
-
-                override fun onNothingSelected(parent: AdapterView<*>) {}
-            }
+    private fun setupFixedAlgorithmConfig() {
+        binding.algorithmSelector.root.visibility = View.GONE
+        sessionInviteViewModel.setDefaultAlgorithmForCurrentSessionType()
     }
 
     private fun setupRecyclerViews() {

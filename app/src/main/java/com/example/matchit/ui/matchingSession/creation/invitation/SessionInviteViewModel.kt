@@ -179,6 +179,16 @@ class SessionInviteViewModel @Inject constructor(
         }
     }
 
+    fun setDefaultAlgorithmForCurrentSessionType() {
+        viewModelScope.launch {
+            when (val curSessionType = sessionRepository.lastSessionType.firstOrNull()) {
+                SessionType.RESTAURANT -> setAlgorithm(AlgorithmType.SYNC)
+                SessionType.MOVIE -> setAlgorithm(AlgorithmType.ASYNC)
+                null -> Log.e("session-type-null", "Session type was null")
+            }
+        }
+    }
+
     /**
      * Reloads completely all friends data from the repository to the current invitation list.
      */

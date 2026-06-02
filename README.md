@@ -1,84 +1,83 @@
 # Match-it Android
 
-Android client for the **Match-it** application — a group 
-activity consensus app that helps friends agree on movies 
-or nearby restaurants using a swipe-based voting session.
+Mobilní aplikace pro **[Match-it](https://github.com/Cross-bit/match-it-demo-backend/tree/thesis)** — výzkumný prototyp skupinového doporučovacího systému. Aplikace pomáhá skupinám přátel najít společnou shodu na **filmu** nebo **restauraci v okolí** pomocí společného hlasování.
 
-> The backend is available at [match-it-backend](https://github.com/Cross-bit/match-it-demo-backend).
+Organizátor vytvoří relaci a pozve ostatní účastníky. Ti se připojí do čekací místnosti a následně hlasují o doporučených položkách pomocí jednoduchých gest: líbí se, nelíbí se nebo neutrální volba. Server průběžně vyhodnocuje hlasy přes WebSockety a posílá další doporučení, dokud skupina nenajde shodu nebo relace neskončí.
 
----
+Aplikace pokrývá celý uživatelský průběh relace: pozvánky, čekací místnost, hlasovací kola s kartami filmů a restaurací, mapy podniků, chat během relace, FCM upozornění a historii proběhlých relací. Komunikuje s demonstračním backendem přes REST API a WebSockety. Výpočet doporučení a trvalé ukládání dat probíhají plně na straně serveru.
 
-## Overview
+### Hlavní funkcionality
 
-The app allows users to create or join a 
-shared voting session, swipe through activity 
-recommendations, and reach a group consensus. 
-Currently **movie matching** is supported.
-
-A short showcase of the application is available [here](https://drive.google.com/file/d/13WdtzGqauqGs-amZH_CfoRhOnkDSGJc6/view?usp=drive_link).
+- **Uživatelský účet** — registrace, přihlášení, správa profilu a preferencí uživatele.
+- **Přátelé** — vyhledávání uživatelů, posílání a správa žádostí o přátelství a seznam přátel pro pozvání kontaktů do hlasovacích relací.
+- **Skupinové hledání shody** — vytváření a připojování se k filmovým nebo restauračním relacím, paralelní distribuované swipe hlasování a synchronizace v reálném čase přes WebSockety.
+- **Historie relací** — přehled všech minulých relací, kterých se uživatel účastnil s výsledky hlasování, s možností dalšího pokračovat v chatu.
 
 ---
 
-## Requirements
+## Požadavky
 
-- Android **9.0 (API 28)** or higher
-- Google account signed in on the device — required 
-for FCM push notifications (session invites and match 
-updates rely on Firebase Cloud Messaging)
+- Android **9.0 (API 28)** nebo novější
+- Google účet přihlášený na zařízení kvůli FCM push notifikacím  
+  (pozvánky do relací a upozornění na nalezenou shodu využívají Firebase Cloud Messaging)
 
 ---
 
-## Build and Run
+## Sestavení a spuštění
 
-The recommended way to build and run the project 
-is via **Android Studio** using the provided Gradle 
-files. Alternatively, use the Gradle wrapper from 
-the command line:
+Doporučený způsob sestavení a spuštění projektu je přes **Android Studio** s použitím dodaných 
+Gradle souborů. Alternativně lze použít Gradle wrapper z příkazové řádky:
 
 ```sh
 ./gradlew assembleDebug
 ```
 
-### Build Flavors
+### Build varianty
 
-The project defines four build flavors — select the appropriate one before building:
+Projekt definuje dvě vývojové build varianty. Před sestavením vyberte odpovídající variantu:
 
-| Flavor | Description |
+| Varianta | Popis |
 |---|---|
-| `devEmu` | Development build targeting Android emulator (`10.0.2.2`) |
-| `devDevice` | Development build targeting a physical device (uses `DEV_SERVER_IP` from `local.properties`) |
+| `devEmu` | Vývojový build pro Android emulátor (`10.0.2.2`) |
+| `devDevice` | Vývojový build pro fyzické zařízení; používá `DEV_SERVER_IP` z `local.properties` |
 
-In Android Studio, select the flavor via **Build Variants** panel.
+V Android Studiu lze variantu vybrat v panelu **Build Variants**.
 
-### Local Configuration
+### Lokální konfigurace
 
-Before running the app, create a `local.properties` file in the project root:
+Před spuštěním aplikace vytvořte v kořeni projektu soubor `local.properties`:
 
 ```properties
-# Required for devDevice flavor — set to your machine's local IP
+# Vyžadováno pro variantu devDevice — nastavte lokální IP adresu svého počítače
 DEV_SERVER_IP=192.168.x.x
 
-# Required for Google Maps (restaurant location display)
+# Vyžadováno pro Google Maps (zobrazení polohy restaurací)
 GOOGLE_MAPS_API_KEY=your-maps-api-key
 ```
 
-> For `devEmu` flavor, `DEV_SERVER_IP` is not needed — the emulator uses `10.0.2.2` automatically.
+> Pro variantu `devEmu` není `DEV_SERVER_IP` potřeba — emulátor automaticky používá adresu `10.0.2.2`.
 
 ---
 
-## Notes
+## Testování
 
-- Users must be signed into a Google account on the device for push notifications (FCM) to work. This is required for session invitations and real-time match updates.
-- Only **movie matching** is currently supported. Restaurant matching is planned.
+**Unit testy** (`app/src/test`) běží na JVM a nevyžadují fyzické zařízení ani emulátor:
+
+```sh
+./gradlew testDebugUnitTest
+```
+
+## Poznámky
+
+- Pro fungování push notifikací musí být na zařízení dostupné Firebase Cloud Messaging. Pozvánky do relací a upozornění na nalezenou shodu jsou posílány přes FCM.
+- Mapy restaurací používají Google Maps API klíč ze souboru `local.properties` popsaného výše.
 
 ---
 
-> This repository contains a research prototype developed as part of a bachelor's thesis.
-
-## License
+## Licence
 
 Copyright (c) 2026 Ondřej Kříž
 
-This software is a research prototype licensed for **non-commercial research and educational use only**. Commercial use is prohibited without explicit written permission.
+Tento software je výzkumný prototyp licencovaný pouze pro **nekomerční výzkumné a vzdělávací účely**. Komerční použití je zakázáno bez výslovného písemného souhlasu.
 
-See [LICENSE](./LICENSE) for full terms. For commercial licensing inquiries contact: ondra.kryz@seznam.cz
+Úplné licenční podmínky jsou uvedeny v souboru [LICENSE](./LICENSE). Pro dotazy ohledně komerční licence kontaktujte: ondra.kryz@seznam.cz

@@ -16,12 +16,12 @@ object SessionParametersFactory {
                     searchCity = "Prague",
                     restaurantPriceRange = 3f,
                     selectedCategories = emptySet(),
-                    algorithm = AlgorithmType.NONE
+                    algorithm = AlgorithmType.SYNC
                 )
 
             SessionType.MOVIE ->
                 SessionParameters.MovieParameters(
-                    algorithm = AlgorithmType.NONE
+                    algorithm = AlgorithmType.ASYNC
                 )
         }
     }

@@ -51,6 +51,7 @@
         </LinearLayout>
         <include
             android:id="@+id/algorithmSelector"
+            android:visibility="gone"
             layout="@layout/view_algorithm_selector" />
         <LinearLayout
             android:id="@+id/linearLayout7"
